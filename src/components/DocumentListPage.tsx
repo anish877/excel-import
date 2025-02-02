@@ -20,7 +20,7 @@ const DocumentsListPage = () => {
     useEffect(() => {
         const fetchDocuments = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/documents');
+                const response = await axios.get('https://excel-backend-3kle.onrender.com/documents');
                 setDocuments(response.data.documents);
             } catch (err) {
                 setError('Failed to fetch documents. Please try again later.');

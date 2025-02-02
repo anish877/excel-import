@@ -127,7 +127,7 @@ const FileImportPage = () => {
         formData.append('file', file);
 
         try {
-            const response = await axios.post("http://localhost:3000/validate", formData, {
+            const response = await axios.post("https://excel-backend-3kle.onrender.com/validate", formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
                 timeout: 30000 // 30 second timeout
             });
@@ -149,7 +149,7 @@ const FileImportPage = () => {
         formData.append('file', file);
 
         try {
-            await axios.post("http://localhost:3000/import", formData, {
+            await axios.post("https://excel-backend-3kle.onrender.com/import", formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
                 timeout: 60000, // 60 second timeout
                 onUploadProgress: (progressEvent) => {

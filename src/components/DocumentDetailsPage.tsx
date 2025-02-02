@@ -35,7 +35,7 @@ const DocumentDetailsPage = () => {
         try {
             setIsLoading(true);
             const response = await axios.get(
-                `http://localhost:3000/documents/${documentId}/rows?page=${currentPage}&limit=10`
+                `https://excel-backend-3kle.onrender.com/documents/${documentId}/rows?page=${currentPage}&limit=10`
             );
             setRows(response.data.rows);
             setPagination(response.data.pagination);
@@ -76,7 +76,7 @@ const DocumentDetailsPage = () => {
         if (!deleteRowId) return;
 
         try {
-            await axios.delete(`http://localhost:3000/documents/${documentId}/rows/${deleteRowId}`);
+            await axios.delete(`https://excel-backend-3kle.onrender.com/documents/${documentId}/rows/${deleteRowId}`);
             setShowDeleteDialog(false);
             setDeleteRowId(null);
             fetchRows();
